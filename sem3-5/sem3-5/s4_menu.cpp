@@ -1,7 +1,7 @@
 #include <iostream>
 #include "s4_dependances.h"
 
-
+//S4_MENU()
 int s4_menu()
 {
 	const unsigned int dimension = 8;
@@ -22,11 +22,11 @@ int s4_menu()
 		switch (selector)
 		{
 		//input() is called
-		case '1': input(t_array, dimension);
+		case '1': input(t_array, dimension, is_created);
 			break;
 
 		//output() is called
-		case '2': output(t_array, dimension);
+		case '2': output(t_array, dimension, is_created);
 			break;
 
 		//return
@@ -39,6 +39,8 @@ int s4_menu()
 
 	} while (selector != '5');
 
+
+	delete is_created;
 
 	return 0;
 }

@@ -72,9 +72,6 @@
     <ClCompile Include="s4_search.cpp">
       <Filter>Source Files\sem4</Filter>
     </ClCompile>
-    <ClCompile Include="s4_rowout_header.cpp">
-      <Filter>Source Files\sem4</Filter>
-    </ClCompile>
     <ClCompile Include="s5_menu.cpp">
       <Filter>Source Files\sem5</Filter>
     </ClCompile>

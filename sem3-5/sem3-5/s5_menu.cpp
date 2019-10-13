@@ -2,7 +2,7 @@
 #include "s5_dependances.h"
 
 
-int menu()
+int s5_menu()
 {
 std::cout << std::endl;
 std::cout << "--PLACEHOLDER_main()--";

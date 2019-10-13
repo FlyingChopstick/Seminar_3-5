@@ -1,5 +1,6 @@
 #include <iostream>
 
+//SEARCH() ->int tmp, checks whether the row has <0 elements, sums if true
 int search(int** t_array, unsigned int dimension)
 {
 	unsigned int t, i, j;
@@ -17,9 +18,6 @@ int search(int** t_array, unsigned int dimension)
 				for (t = 0; t < dimension; t++)
 				{
 					tmp += t_array[i][t];
-
-					//std::cout << t_array[i][t] << std::endl;											//DEBUG <array element>
-					//std::cout << t << "|" << tmp << std::endl;										//DEBUG <t, tmp>
 				}
 
 				std::cout << tmp;
@@ -29,5 +27,6 @@ int search(int** t_array, unsigned int dimension)
 			}
 		}
 	}
+
 	return tmp;
 }

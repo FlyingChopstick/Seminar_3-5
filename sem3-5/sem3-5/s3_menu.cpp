@@ -61,7 +61,14 @@ int s3_menu()
 	} while (selector != '5');
 
 
-	delete[] t_array;																						//DELETE t_array[]
-	std::cout << std::endl << "Array deleted." << std::endl;
+	delete[] t_array;	
+	//std::cout << std::endl << "Array deleted." << std::endl;													//DELETE t_array[]
+
+
+	delete is_created;
+	delete is_sorted;
+	delete two_negatives;
+
+
 	return 0;
 }

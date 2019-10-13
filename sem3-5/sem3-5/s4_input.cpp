@@ -2,7 +2,7 @@
 #include <fstream>
 
 //int input(int* &t_array) 
-int** input(int** &t_array, unsigned int dimension) {
+int** input(int** &t_array, unsigned int dimension, bool* is_created) {
 	const unsigned int filename_size = 64;
 	char filename[filename_size];
 	unsigned int i, j;
@@ -28,7 +28,9 @@ int** input(int** &t_array, unsigned int dimension) {
 
 		std::cout << "Opening the file..." << std::endl;
 		input_file.open(filename);
-		if (!input_file) std::cout << "Error: Could not open the file specified." << std::endl;
+		if (!input_file) std::cout << "Error: Could not open the file specified." 
+			<< std::endl;
+
 	} while (!input_file);
 
 	std::cout << "File was successfully opened, reading..." << std::endl;
@@ -40,7 +42,8 @@ int** input(int** &t_array, unsigned int dimension) {
 			input_file >> t_array[i][j];
 			if (!input_file)
 			{
-				std::cout << "Error: could not read the element, returning to the menu." << std::endl;
+				std::cout << "Error: could not read the element, returning to the menu." 
+					<< std::endl;
 				return 0;
 			}
 		}
@@ -48,10 +51,11 @@ int** input(int** &t_array, unsigned int dimension) {
 
 	std::cout << "The file was read successfully.";
 	std::cout << std::endl;
+	*is_created = true;
 
 	input_file.close();
 
-	std::cout << "----INPUT END----" << std::endl;
+	std::cout << "----INPUT END----";
 	std::cout << std::endl;
 	return t_array;
 }
