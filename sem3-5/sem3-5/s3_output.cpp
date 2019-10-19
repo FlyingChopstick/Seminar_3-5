@@ -1,5 +1,8 @@
 #include <iostream>
 
+//OBSOLETE, USE NEW_OUTPUT.cpp
+
+/**
 int output(int max_pos, int n_product, int* t_array, unsigned int* size, bool* is_created, bool* two_negatives, bool* is_sorted)
 {
 	std::cout << std::endl;
@@ -56,3 +59,4 @@ int output(int max_pos, int n_product, int* t_array, unsigned int* size, bool* i
 
 	return 0;
 }
+/**/

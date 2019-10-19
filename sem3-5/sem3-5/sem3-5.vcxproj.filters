@@ -75,6 +75,12 @@
     <ClCompile Include="s5_menu.cpp">
       <Filter>Source Files\sem5</Filter>
     </ClCompile>
+    <ClCompile Include="s3_new_sort.cpp">
+      <Filter>Source Files\sem3</Filter>
+    </ClCompile>
+    <ClCompile Include="new_output.cpp">
+      <Filter>Source Files\sem3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="s3_dependances.h">
