@@ -10,12 +10,13 @@ int output(int** t_array, unsigned int dimension, bool* is_created)
 	switch (*is_created)
 	{
 	case false: std::cout << "Error: Array was not created. You need to load it first."
-		<< std::endl;
+					<< std::endl;
 		break;
 
 	case true:
 	{
-		std::cout << "----OUTPUT----" << std::endl;
+		std::cout << "----OUTPUT----" 
+			<< std::endl;
 
 		identical(t_array, dimension);
 		std::cout << std::endl;
@@ -35,7 +36,8 @@ int output(int** t_array, unsigned int dimension, bool* is_created)
 				//go back if 'n'
 			case 'n':
 			{
-				std::cout << "----OUTPUT END----" << std::endl;
+				std::cout << "----OUTPUT END----" 
+					<< std::endl;
 				return 0;
 
 				break;
@@ -59,20 +61,18 @@ int output(int** t_array, unsigned int dimension, bool* is_created)
 			}
 
 			default: std::cout << "Wrong input, please try again" 
-			<< std::endl;
+						<< std::endl;
 				break;
 			}
 		} while ((selector != 'y') && (selector != 'n'));
 
-		std::cout << "----OUTPUT END----" << std::endl;
+		std::cout << "----OUTPUT END----" 
+			<< std::endl;
 		std::cout << std::endl;
 
 		break;
 	}
 
-	default: std::cout << "Error: Can't determine the state of the array." 
-		<< std::endl;
-		break;
 	}
 	
 	return 0;
