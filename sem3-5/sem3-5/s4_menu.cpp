@@ -4,7 +4,7 @@
 //S4_MENU()
 int s4_menu()
 {
-	const unsigned int dimension = 8;
+	unsigned int* dimension = new unsigned int(0);
 	int **t_array = NULL;
 	char selector = '0';
 	bool* is_created = new bool(false);
@@ -12,10 +12,14 @@ int s4_menu()
 	do
 	{
 		std::cout << std::endl;
-		std::cout << "----SEMINAR 4 MENU----" << std::endl;
-		std::cout << " 1. Read the array from file" << std::endl;
-		std::cout << " 2. Print the values" << std::endl;
-		std::cout << " 5. Exit" << std::endl;
+		std::cout << "----SEMINAR 4 MENU----"
+			<< std::endl;
+		std::cout << " 1. Enter the array" 
+			<< std::endl;
+		std::cout << " 2. Print the values"
+			<< std::endl;
+		std::cout << " 5. Exit" 
+			<< std::endl;
 		std::cout << "Your selection: ";
 		std::cin >> selector;
 
@@ -33,13 +37,14 @@ int s4_menu()
 		case '5': 
 			break;
 
-		default: std::cout << "Wrong input, try again." << std::endl;
+		default: std::cout << "Wrong input, try again." 
+					<< std::endl;
 			break;
 		}
 
 	} while (selector != '5');
 
-
+	delete dimension;
 	delete is_created;
 
 	return 0;

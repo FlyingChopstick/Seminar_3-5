@@ -32,7 +32,8 @@ int output(int max_pos, int n_product, int* t_array, unsigned int* size, bool* i
 			switch (selector)
 			{
 			//max_pos output
-			case '1': std::cout << "The position of the greatest element is #" << max_pos << " (" << t_array[max_pos] << ")" 
+			case '1': std::cout << std::endl 
+				<< "The position of the greatest element is #" << max_pos << " (" << t_array[max_pos] << ")" 
 				<< std::endl;
 				break;
 
@@ -40,7 +41,8 @@ int output(int max_pos, int n_product, int* t_array, unsigned int* size, bool* i
 			case '2': 
 				switch (*two_negatives)
 				{
-				case true: std::cout << "The product of the elements between the first and the second 0 is " << n_product 
+				case true: std::cout << std::endl 
+					<< "The product of the elements between the first and the second 0 is " << n_product
 					<< std::endl;
 					break;
 				case false: std::cout << "There are no 0 elements or only one 0 element in the array." 
@@ -52,7 +54,8 @@ int output(int max_pos, int n_product, int* t_array, unsigned int* size, bool* i
 			//array output
 			case'3': 		
 			{
-				std::cout << "Array output: ";
+				std::cout << std::endl 
+					<< "Array output: ";
 				for (i = 0; i < *size; i++)
 				{
 					std::cout << t_array[i] << " ";

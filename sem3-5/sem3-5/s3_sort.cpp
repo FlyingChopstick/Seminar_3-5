@@ -1,8 +1,8 @@
-#include <iostream>
-
 //OBSOLETE, USE NEW_SORT.cpp
 
 /**
+#include <iostream>
+
 //int SORT() -> int* t_array or 0, sorts the array with odd positioned numbers before odd
 int sort(int* &t_array, unsigned int* size, bool* is_created, bool* is_sorted)
 {

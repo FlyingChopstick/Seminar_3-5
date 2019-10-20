@@ -1,5 +1,10 @@
+//OBSOLETE, USE NEW_OUTPUT.cpp INSTEAD
+
+
+/**
 #include <iostream>
 #include "s4_dependances.h"
+
 
 //S4_OUTPUT()
 int output(int** t_array, unsigned int dimension, bool* is_created)
@@ -77,3 +82,4 @@ int output(int** t_array, unsigned int dimension, bool* is_created)
 	
 	return 0;
 }
+/**/

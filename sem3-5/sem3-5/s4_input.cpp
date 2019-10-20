@@ -1,3 +1,6 @@
+//OBSOLETE, USE NEW_INPUT.cpp INSTEAD
+
+/**
 #include <iostream>
 #include <fstream>
 
@@ -59,3 +62,4 @@ int** input(int** &t_array, unsigned int dimension, bool* is_created) {
 	std::cout << std::endl;
 	return t_array;
 }
+/**/

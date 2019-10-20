@@ -78,8 +78,14 @@
     <ClCompile Include="s3_new_sort.cpp">
       <Filter>Source Files\sem3</Filter>
     </ClCompile>
-    <ClCompile Include="new_output.cpp">
+    <ClCompile Include="s3_new_output.cpp">
       <Filter>Source Files\sem3</Filter>
+    </ClCompile>
+    <ClCompile Include="s4_new_output.cpp">
+      <Filter>Source Files\sem4</Filter>
+    </ClCompile>
+    <ClCompile Include="s4_new_input.cpp">
+      <Filter>Source Files\sem4</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

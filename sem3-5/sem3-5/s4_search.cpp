@@ -28,5 +28,7 @@ int search(int** t_array, unsigned int dimension)
 		}
 	}
 
+	//std::cout << std::endl;
+
 	return tmp;
 }
