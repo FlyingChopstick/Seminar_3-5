@@ -39,28 +39,16 @@
     <ClCompile Include="s3_input.cpp">
       <Filter>Source Files\sem3</Filter>
     </ClCompile>
-    <ClCompile Include="s3_output.cpp">
-      <Filter>Source Files\sem3</Filter>
-    </ClCompile>
     <ClCompile Include="s3_max_position.cpp">
       <Filter>Source Files\sem3</Filter>
     </ClCompile>
     <ClCompile Include="s3_menu.cpp">
       <Filter>Source Files\sem3</Filter>
     </ClCompile>
-    <ClCompile Include="s3_sort.cpp">
-      <Filter>Source Files\sem3</Filter>
-    </ClCompile>
     <ClCompile Include="main_menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="s4_compare.cpp">
-      <Filter>Source Files\sem4</Filter>
-    </ClCompile>
-    <ClCompile Include="s4_input.cpp">
-      <Filter>Source Files\sem4</Filter>
-    </ClCompile>
-    <ClCompile Include="s4_output.cpp">
       <Filter>Source Files\sem4</Filter>
     </ClCompile>
     <ClCompile Include="s4_menu.cpp">

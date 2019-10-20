@@ -123,18 +123,14 @@
     <ClCompile Include="s3_main.cpp" />
     <ClCompile Include="s3_max_position.cpp" />
     <ClCompile Include="s3_menu.cpp" />
-    <ClCompile Include="s3_output.cpp" />
     <ClCompile Include="s3_product.cpp" />
     <ClCompile Include="s4_compare.cpp" />
-    <ClCompile Include="s4_input.cpp" />
     <ClCompile Include="s4_main.cpp" />
     <ClCompile Include="s4_menu.cpp" />
     <ClCompile Include="s4_new_input.cpp" />
     <ClCompile Include="s4_new_output.cpp" />
-    <ClCompile Include="s4_output.cpp" />
     <ClCompile Include="s4_search.cpp" />
     <ClCompile Include="s5_main.cpp" />
-    <ClCompile Include="s3_sort.cpp" />
     <ClCompile Include="s5_menu.cpp" />
   </ItemGroup>
   <ItemGroup>
