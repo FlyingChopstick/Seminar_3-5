@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "s3_dependances.h"
 
 //S3_MAIN()

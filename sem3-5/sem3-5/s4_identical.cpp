@@ -1,5 +1,5 @@
 #include "s4_dependances.h"
-#include <iostream>
+#include "stdafx.h"
 
 //IDENTICAL() -> int result, cout<< of the identical rows and columns
 int identical(int** t_array, unsigned int dimension)

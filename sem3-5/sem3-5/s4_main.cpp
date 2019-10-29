@@ -1,3 +1,4 @@
+#include "stdafx.h"
 #include "s4_dependances.h"
 
 //S4_MAIN()

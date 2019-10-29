@@ -1,4 +1,4 @@
-#include <iostream>
+#include "stdafx.h"
 
 //int INPUT() -> int*, creates and fills the array
 int input(int* &t_array, unsigned int* size, bool* is_created)
@@ -6,9 +6,10 @@ int input(int* &t_array, unsigned int* size, bool* is_created)
 	unsigned int i;																			//iterator
 	char selector = 'n';																	//local selector
 
-	std::cout << std::endl;
-	std::cout << "----INPUT----";
-	std::cout << std::endl;
+	std::cout
+		<< std::endl
+		<< "----INPUT----"
+		<< std::endl;
 
 	//check whether the array is already created
 	if (*is_created==true)
@@ -32,7 +33,8 @@ int input(int* &t_array, unsigned int* size, bool* is_created)
 				*is_created = false;
 				break;
 			}
-			default: std::cout << "Wrong input, try again." << std::endl;
+			default: std::cout << "Wrong input, try again." 
+				<< std::endl;
 			}
 		} while ((selector != 'y') && (selector != 'n'));
 	}
@@ -52,9 +54,10 @@ int input(int* &t_array, unsigned int* size, bool* is_created)
 	*is_created = true;																		//array state change (creation)
 	std::cout << "Array created";
 
-	std::cout << std::endl;
-	std::cout << "----INPUT END----";
-	std::cout << std::endl;
+	std::cout 
+		<< std::endl 
+		<< "----INPUT END----" 
+		<< std::endl;
 
 	return *t_array;																		//-> *t_array
 }

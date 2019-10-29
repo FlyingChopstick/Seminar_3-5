@@ -1,4 +1,4 @@
-#include <iostream>
+#include "stdafx.h"
 #include "s3_dependances.h"
 
 int s3_menu()
@@ -60,9 +60,9 @@ int s3_menu()
 
 	} while (selector != '5');
 
-
+	std::cout << std::endl << "Deleting the array." << std::endl;													//DELETE t_array[]
 	delete[] t_array;	
-	//std::cout << std::endl << "Array deleted." << std::endl;													//DELETE t_array[]
+
 
 
 	delete is_created;

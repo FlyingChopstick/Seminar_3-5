@@ -1,4 +1,4 @@
-#include <iostream>
+#include "stdafx.h"
 
 //SEARCH() ->int tmp, checks whether the row has <0 elements, sums if true
 int search(int** t_array, unsigned int dimension)

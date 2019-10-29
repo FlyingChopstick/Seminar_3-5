@@ -1,7 +1,7 @@
-#include <iostream>
+#include "stdafx.h"
 
 //int SORT() -> 0, sorts the array with odd positioned numbers before odd
-int sort(int* t_array, unsigned int* size, bool* is_created)
+int sort(const int* t_array, unsigned int* size, bool* is_created)
 {
 	//check whether the array is created
 	switch (*is_created)

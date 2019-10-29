@@ -1,4 +1,6 @@
-#include <iostream>
+//#include <iostream>
+#include "stdafx.h"
+
 #include "s4_dependances.h"
 
 //S4_OUTPUT()
