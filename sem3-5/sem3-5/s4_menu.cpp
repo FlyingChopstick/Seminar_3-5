@@ -4,10 +4,14 @@
 //S4_MENU()
 int s4_menu()
 {
-	unsigned int dimension = 0;
-	int** t_array = new int* [10];																	//main array
-	for (unsigned int i = 0; i < 10; i++)
-		t_array[i] = new int [10];
+	const unsigned int pre_alloc = 10;														//max size of the array, referenced in s4_array_size
+	unsigned int dimension = 0;																//custom array dimensions, 0 by default
+	
+	//COMMIT f2841a8 - ALLOCATION CHANGE, USING PRE-DETERMINED MAX
+	int** t_array = new int* [pre_alloc];													//main array allocation
+	for (unsigned int i = 0; i < pre_alloc; i++)
+		t_array[i] = new int [pre_alloc];
+	//
 
 	char selector = '0';																	//menu selector
 	bool* is_created = new bool(false);														//array state (created)
@@ -17,9 +21,6 @@ int s4_menu()
 		cout << endl;
 		cout << "----SEMINAR 4 MENU----";
 		
-		
-		
-		
 		cout << endl
 			<< " 1. Enter the array" 
 			<< endl
@@ -27,27 +28,16 @@ int s4_menu()
 			<< endl
 			<< " 5. Exit" 
 			<< endl;
+
 		cout << "Your selection: ";
 		cin >> selector;
 
 		switch (selector)
 		{
-		//input() is called
+		//input() and dimension() are called
 		case '1': 
 		{
-
-			//t_array = new int*[dimension];
-			//for (unsigned int i =0; i)
-			//delete[] t_array;
-			dimension = array_size();
-			
-			//t_array = new int* [dimension];																	//main array
-			//for (unsigned int i = 0; i < dimension; i++)
-			//	t_array[i] = new int[2];
-
-			//for (unsigned int i = 0; i < dimension; i++)
-			//	t_array[i] = new int [dimension];
-
+			dimension = array_size();														//dimension() handles the setting of the array size
 			input(t_array, dimension, is_created);
 		}
 			break;
@@ -68,21 +58,18 @@ int s4_menu()
 	} while (selector != '5');
 
 
+	//array deletion
 	cout << "Deleting the array"
 		<< endl;
-	/**/
-	for (unsigned int i = 0; i < 10 ; i++)
+	for (unsigned int i = 0; i < pre_alloc; i++)
 	{
-		//cout << "Deleting the " << i << " element (" << t_array[i][0] << ")"
-		//	<< endl;
+
 		delete[] t_array[i];
 	}
-	/**/
 	delete[] t_array;
 	cout << "Array deleted." 
 		<< endl;
 
-	//delete[] dimension;
 	delete is_created;
 
 	return 0;

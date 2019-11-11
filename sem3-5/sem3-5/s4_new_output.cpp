@@ -19,27 +19,25 @@ int output(int** t_array, unsigned int dimension, bool* is_created)
 	case true:
 	{
 		cout << endl 
-			<< "----OUTPUT MENU----"
-			<< endl;
+			<< "----OUTPUT MENU----"<< endl;
 
 		do
 		{
-			cout << " 1. Search for identical rows and columns"
-				<< endl
-				<< " 2. Sum the rows with the negative elements"
-				<< endl
-				<< " 3. Display the array"
-				<< endl
-				<< " 5. Return"
-				<< endl;
+			cout << " 1. Search for identical rows and columns" << endl
+				<< " 2. Sum the rows with the negative elements" << endl
+				<< " 3. Display the array" << endl
+				<< " 5. Return" << endl;
+			cout << "Your selection: ";
 			cin >> selector;
 
 			switch (selector)
 			{
 			case '1': identical(t_array, dimension);
+				cout << endl; 
 				break;
 
 			case '2': search(t_array, dimension);
+				cout << endl;
 				break;
 
 			case '3':
@@ -65,8 +63,7 @@ int output(int** t_array, unsigned int dimension, bool* is_created)
 				return 0;
 			}
 
-			default: cout << "Wrong input, please try again."
-						<< endl;
+			default: cout << "Wrong input, please try again." << endl;
 				break;
 			}
 

@@ -5,7 +5,7 @@ int search(int** t_array, unsigned int dimension)
 {
 	unsigned int t, i, j;
 	int tmp = 0;
-
+	bool is_found = false;
 
 	for (i = 0; i < dimension; i++)
 	{
@@ -14,21 +14,27 @@ int search(int** t_array, unsigned int dimension)
 		{
 			if (t_array[i][j] < 0)
 			{
-				cout << "The sum of the row #" << i << " is ";
+				is_found = true;
+				
 				for (t = 0; t < dimension; t++)
 				{
 					tmp += t_array[i][t];
 				}
-
-				cout << tmp;
-				cout << endl;
 
 				break;
 			}
 		}
 	}
 
-	//cout << endl;
+	//output determination
+	if (is_found == true)
+	{
+		cout << "The sum of the row #" << i << " is ";
+		cout << tmp;
+		cout << endl;
+	}
+	else
+		cout << "There are no negative elements in the array" << endl;
 
 	return tmp;
 }
