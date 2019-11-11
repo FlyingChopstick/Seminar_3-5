@@ -2,9 +2,9 @@
 
 int output(int max_pos, int n_product, const int* t_array, unsigned int* size, bool* is_created, bool* two_negatives)
 {
-	std::cout << std::endl;
-	std::cout << "----OUTPUT----";
-	std::cout << std::endl;
+	cout << endl;
+	cout << "----OUTPUT----";
+	cout << endl;
 
 	//check whether the array is created
 	switch (*is_created)
@@ -15,38 +15,38 @@ int output(int max_pos, int n_product, const int* t_array, unsigned int* size, b
 		unsigned int i;
 		char selector = '0';
 
-		std::cout
+		cout
 			<< " 1. The greatest element"
-			<< std::endl
+			<< endl
 			<< " 2. The product of the elements between zeroes"
-			<< std::endl
+			<< endl
 			<< " 3. Array output"
-			<< std::endl
+			<< endl
 			<< " 5. Return"
-			<< std::endl;
+			<< endl;
 		do
 		{
-			std::cout << "Your selection: ";
-			std::cin >> selector;
+			cout << "Your selection: ";
+			cin >> selector;
 			
 			switch (selector)
 			{
 			//max_pos output
-			case '1': std::cout << std::endl 
+			case '1': cout << endl 
 				<< "The position of the greatest element is #" << max_pos << " (" << t_array[max_pos] << ")" 
-					<< std::endl;
+					<< endl;
 				break;
 
 			//n_product output
 			case '2': 
 				switch (*two_negatives)
 				{
-				case true: std::cout << std::endl 
+				case true: cout << endl 
 					<< "The product of the elements between the first and the second 0 is " << n_product
-						<< std::endl;
+						<< endl;
 					break;
-				case false: std::cout << "There are no 0 elements or only one 0 element in the array." 
-						<< std::endl;
+				case false: cout << "There are no 0 elements or only one 0 element in the array." 
+						<< endl;
 					break;
 				}
 				break;
@@ -56,13 +56,13 @@ int output(int max_pos, int n_product, const int* t_array, unsigned int* size, b
 			{
 				unsigned int i;
 
-				std::cout << std::endl
+				cout << endl
 					<< "Array output: ";
 				for (i = 0; i < *size; i++)
 				{
-					std::cout << t_array[i] << " ";
+					cout << t_array[i] << " ";
 				}
-				std::cout << std::endl;
+				cout << endl;
 
 				break;
 			}
@@ -70,8 +70,8 @@ int output(int max_pos, int n_product, const int* t_array, unsigned int* size, b
 			//return
 			case '5': return 0;
 
-			default: std::cout << "Wrong input, please try again."
-						<< std::endl;
+			default: cout << "Wrong input, please try again."
+						<< endl;
 			}
 		} while (selector != '5');
 
@@ -79,14 +79,14 @@ int output(int max_pos, int n_product, const int* t_array, unsigned int* size, b
 	}
 
 	//if false go back
-	case false: std::cout << "Array was not created. You need to input first.";
+	case false: cout << "Array was not created. You need to input first.";
 		break;
 	}
 
-	std::cout 
-		<< std::endl
+	cout 
+		<< endl
 		<< "----OUTPUT END----"
-		<< std::endl;
+		<< endl;
 
 	return 0;
 }

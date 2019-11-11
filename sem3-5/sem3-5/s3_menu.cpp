@@ -17,14 +17,14 @@ int s3_menu()
 	//menu loop
 	do
 	{
-		std::cout << std::endl;
-		std::cout << "----SEMINAR 3 MENU----" << std::endl;
-		std::cout << " 1. Array input" << std::endl;
-		std::cout << " 2. Sort the array" << std::endl;
-		std::cout << " 3. Print the values" << std::endl;
-		std::cout << " 5. Exit" << std::endl;
-		std::cout << "Your selection: ";
-		std::cin >> selector;
+		cout << endl;
+		cout << "----SEMINAR 3 MENU----" << endl;
+		cout << " 1. Array input" << endl;
+		cout << " 2. Sort the array" << endl;
+		cout << " 3. Print the values" << endl;
+		cout << " 5. Exit" << endl;
+		cout << "Your selection: ";
+		cin >> selector;
 
 		switch (selector)
 		{
@@ -45,7 +45,7 @@ int s3_menu()
 					//if true, output() is called
 				case true: output(max_position(t_array, size), product(t_array, size, two_negatives), t_array, size, is_created, two_negatives);	//OUTPUT() is called
 					break;
-				case false: std::cout << "Error: The array is not created." << std::endl;
+				case false: cout << "Error: The array is not created." << endl;
 					break;
 				}
 			}
@@ -54,13 +54,13 @@ int s3_menu()
 			case '5': 
 				break;
 
-			default: std::cout << "Wrong input, try again." << std::endl;
+			default: cout << "Wrong input, try again." << endl;
 				break;
 		}
 
 	} while (selector != '5');
 
-	std::cout << std::endl << "Deleting the array." << std::endl;													//DELETE t_array[]
+	cout << endl << "Deleting the array." << endl;													//DELETE t_array[]
 	delete[] t_array;	
 
 

@@ -14,21 +14,21 @@ int search(int** t_array, unsigned int dimension)
 		{
 			if (t_array[i][j] < 0)
 			{
-				std::cout << "The sum of the row #" << i << " is ";
+				cout << "The sum of the row #" << i << " is ";
 				for (t = 0; t < dimension; t++)
 				{
 					tmp += t_array[i][t];
 				}
 
-				std::cout << tmp;
-				std::cout << std::endl;
+				cout << tmp;
+				cout << endl;
 
 				break;
 			}
 		}
 	}
 
-	//std::cout << std::endl;
+	//cout << endl;
 
 	return tmp;
 }

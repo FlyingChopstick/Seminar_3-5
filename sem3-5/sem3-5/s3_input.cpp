@@ -6,19 +6,19 @@ int input(int* &t_array, unsigned int* size, bool* is_created)
 	unsigned int i;																			//iterator
 	char selector = 'n';																	//local selector
 
-	std::cout
-		<< std::endl
+	cout
+		<< endl
 		<< "----INPUT----"
-		<< std::endl;
+		<< endl;
 
 	//check whether the array is already created
 	if (*is_created==true)
 	{
 		//override confirmation selector
-		std::cout << "The array is already created. If you continue, it will be deleted. Proceed? (y/n): ";
+		cout << "The array is already created. If you continue, it will be deleted. Proceed? (y/n): ";
 		do
 		{
-			std::cin >> selector;
+			cin >> selector;
 			//confirmation
 			switch (selector)
 			{
@@ -33,31 +33,31 @@ int input(int* &t_array, unsigned int* size, bool* is_created)
 				*is_created = false;
 				break;
 			}
-			default: std::cout << "Wrong input, try again." 
-				<< std::endl;
+			default: cout << "Wrong input, try again." 
+				<< endl;
 			}
 		} while ((selector != 'y') && (selector != 'n'));
 	}
 	   
-	std::cout << "Enter the number of elements: ";
-	std::cin >> *size;
+	cout << "Enter the number of elements: ";
+	cin >> *size;
 
 	t_array = new int[*size];																		//NEW t_array[size]
 
 	//filling the array
-	std::cout << "Filling the array with " << *size << " element(s).\n";
+	cout << "Filling the array with " << *size << " element(s).\n";
 	for (i = 0; i < *size; i++) {
-		std::cout << "Element #" << i << ": ";
-		std::cin >> t_array[i];
+		cout << "Element #" << i << ": ";
+		cin >> t_array[i];
 	}
 
 	*is_created = true;																		//array state change (creation)
-	std::cout << "Array created";
+	cout << "Array created";
 
-	std::cout 
-		<< std::endl 
+	cout 
+		<< endl 
 		<< "----INPUT END----" 
-		<< std::endl;
+		<< endl;
 
 	return *t_array;																		//-> *t_array
 }

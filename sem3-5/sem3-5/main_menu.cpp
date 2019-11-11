@@ -11,21 +11,21 @@ int main()
 	do
 	{
 
-		std::cout << "-----MAIN MENU-----" << std::endl;
-		std::cout << " 1. Seminar 3" << std::endl;
-		std::cout << " 2. Seminar 4" << std::endl;
-		std::cout << " 3. Seminar 5" << std::endl;
-		std::cout << " 7. Exit" << std::endl;
-		std::cout << "Select the task: ";
-		std::cin >> selector;
+		cout << "-----MAIN MENU-----" << endl;
+		cout << " 1. Seminar 3" << endl;
+		cout << " 2. Seminar 4" << endl;
+		cout << " 3. Seminar 5" << endl;
+		cout << " 7. Exit" << endl;
+		cout << "Select the task: ";
+		cin >> selector;
 
 		switch (selector)
 		{
-		case '1': s3_main(); std::cout << std::endl;
+		case '1': s3_main(); cout << endl;
 			break;
-		case '2': s4_main(); std::cout << std::endl;
+		case '2': s4_main(); cout << endl;
 			break;
-		case '3': s5_main(); std::cout << std::endl;
+		case '3': s5_main(); cout << endl;
 			break;
 
 		case '7':
@@ -34,12 +34,12 @@ int main()
 		}
 		break;
 
-		default: std::cout << "Wrong input. ";
+		default: cout << "Wrong input. Try again" << endl;
 			break;
 		}
 	} while (selector != '7');
 
-	std::cout << std::endl;
+	cout << endl;
 	system("pause");
 	return 0;
 }

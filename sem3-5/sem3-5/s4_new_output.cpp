@@ -4,71 +4,69 @@
 #include "s4_dependances.h"
 
 //S4_OUTPUT()
-int output(int** t_array, unsigned int* dimension, bool* is_created)
+int output(int** t_array, unsigned int dimension, bool* is_created)
 {
-	unsigned int local_dimension = *dimension;
+	//unsigned int local_dimension = *dimension;
 	unsigned int i, j;
 	char selector = 'n';
 
 	switch (*is_created)
 	{
-	case false: std::cout << "Error: Array was not created. You need to create and fill it first."
-		<< std::endl;
+	case false: cout << "Error: Array was not created. You need to create and fill it first."
+		<< endl;
 		break;
 
 	case true:
 	{
-		std::cout << std::endl 
+		cout << endl 
 			<< "----OUTPUT MENU----"
-			<< std::endl;
-
-
+			<< endl;
 
 		do
 		{
-			std::cout << " 1. Search for identical rows and columns"
-				<< std::endl
+			cout << " 1. Search for identical rows and columns"
+				<< endl
 				<< " 2. Sum the rows with the negative elements"
-				<< std::endl
+				<< endl
 				<< " 3. Display the array"
-				<< std::endl
+				<< endl
 				<< " 5. Return"
-				<< std::endl;
-			std::cin >> selector;
+				<< endl;
+			cin >> selector;
 
 			switch (selector)
 			{
-			case '1': identical(t_array, local_dimension);
+			case '1': identical(t_array, dimension);
 				break;
 
-			case '2': search(t_array, local_dimension);
+			case '2': search(t_array, dimension);
 				break;
 
 			case '3':
 			{
-				for (i = 0; i < local_dimension; i++)
+				for (i = 0; i < dimension; i++)
 				{
-					for (j = 0; j < local_dimension; j++)
+					for (j = 0; j < dimension; j++)
 					{
-						std::cout << t_array[i][j] << " ";
+						cout << t_array[i][j] << "	";
 					}
-					std::cout << std::endl;
+					cout << endl;
 				}
-				std::cout << std::endl;
+				cout << endl;
 				break;
 			}
 
 			case '5':
 			{
-				std::cout << "----OUTPUT END----"
-					<< std::endl;
-				std::cout << std::endl;
+				cout << "----OUTPUT END----"
+					<< endl;
+				cout << endl;
 
 				return 0;
 			}
 
-			default: std::cout << "Wrong input, please try again."
-						<< std::endl;
+			default: cout << "Wrong input, please try again."
+						<< endl;
 				break;
 			}
 

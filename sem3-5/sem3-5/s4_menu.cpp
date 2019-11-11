@@ -4,33 +4,52 @@
 //S4_MENU()
 int s4_menu()
 {
-	//unsigned int* dimension = new unsigned int(0);											//array dimension (square array)
-	unsigned int* dimension = new unsigned int[2];
-	dimension[0] = 10;
-	dimension[1] = 10;
+	unsigned int dimension = 0;
+	int** t_array = new int* [10];																	//main array
+	for (unsigned int i = 0; i < 10; i++)
+		t_array[i] = new int [10];
 
-	int **t_array = NULL;																	//main array
 	char selector = '0';																	//menu selector
 	bool* is_created = new bool(false);														//array state (created)
 
 	do
 	{
-		std::cout << std::endl;
-		std::cout << "----SEMINAR 4 MENU----"
-			<< std::endl
+		cout << endl;
+		cout << "----SEMINAR 4 MENU----";
+		
+		
+		
+		
+		cout << endl
 			<< " 1. Enter the array" 
-			<< std::endl
+			<< endl
 			<< " 2. Print the values"
-			<< std::endl
+			<< endl
 			<< " 5. Exit" 
-			<< std::endl;
-		std::cout << "Your selection: ";
-		std::cin >> selector;
+			<< endl;
+		cout << "Your selection: ";
+		cin >> selector;
 
 		switch (selector)
 		{
 		//input() is called
-		case '1': input(t_array, dimension, is_created);
+		case '1': 
+		{
+
+			//t_array = new int*[dimension];
+			//for (unsigned int i =0; i)
+			//delete[] t_array;
+			dimension = array_size();
+			
+			//t_array = new int* [dimension];																	//main array
+			//for (unsigned int i = 0; i < dimension; i++)
+			//	t_array[i] = new int[2];
+
+			//for (unsigned int i = 0; i < dimension; i++)
+			//	t_array[i] = new int [dimension];
+
+			input(t_array, dimension, is_created);
+		}
 			break;
 
 		//output() is called
@@ -41,16 +60,29 @@ int s4_menu()
 		case '5': 
 			break;
 
-		default: std::cout << "Wrong input, try again." 
-					<< std::endl;
+		default: cout << "Wrong input, try again." 
+					<< endl;
 			break;
 		}
 
 	} while (selector != '5');
 
 
-	
-	delete[] dimension;
+	cout << "Deleting the array"
+		<< endl;
+	/**/
+	for (unsigned int i = 0; i < 10 ; i++)
+	{
+		//cout << "Deleting the " << i << " element (" << t_array[i][0] << ")"
+		//	<< endl;
+		delete[] t_array[i];
+	}
+	/**/
+	delete[] t_array;
+	cout << "Array deleted." 
+		<< endl;
+
+	//delete[] dimension;
 	delete is_created;
 
 	return 0;

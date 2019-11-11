@@ -3,9 +3,9 @@
 
 int s5_main() 
 {
-	std::cout << std::endl;
-	std::cout << "--PLACEHOLDER_main()--";
-	std::cout << std::endl;
+	cout << endl;
+	cout << "--PLACEHOLDER_main()--";
+	cout << endl;
 
 	return 0;
 }

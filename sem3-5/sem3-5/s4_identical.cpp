@@ -14,14 +14,14 @@ int identical(int** t_array, unsigned int dimension)
 		if (t_array[0][i] == t_array[i][0]) 
 		{
 			result = (compare(t_array, dimension, i) == true) ? i : -1;									//COMPARE() is called, output is stored in <result>
-			//std::cout << "The result is \"" << result << "\"";										//DEBUG raw <result>
+			//cout << "The result is \"" << result << "\"";										//DEBUG raw <result>
 
-			if (result != -1) std::cout << "The row #" << result << " is identical to the column #" << result 
-				<< std::endl;
+			if (result != -1) cout << "The row #" << result << " is identical to the column #" << result 
+				<< endl;
 		}
 	}
 
-	//std::cout << std::endl;
+	//cout << endl;
 
 	return result;
 }
