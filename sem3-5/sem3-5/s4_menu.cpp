@@ -4,7 +4,7 @@
 //S4_MENU()
 int s4_menu()
 {
-	const unsigned int pre_alloc = 10;														//max size of the array, referenced in s4_array_size
+	const unsigned int pre_alloc = 10;														//max size of the array, referenced in s4_array_size, s4_input
 	unsigned int dimension = 0;																//custom array dimensions, 0 by default
 	
 	//COMMIT f2841a8 - ALLOCATION CHANGE, USING PRE-DETERMINED MAX
@@ -37,8 +37,35 @@ int s4_menu()
 		//input() and dimension() are called
 		case '1': 
 		{
-			dimension = array_size();														//dimension() handles the setting of the array size
-			input(t_array, dimension, is_created);
+			if (*is_created == true)
+			{
+				char conf_selector = 'a';
+				while ((conf_selector != 'n') && (conf_selector != 'y'))
+				{
+					cout << "Array is already created. If you continue it will be overwritten. Proceed? (y/n): ";
+					cin >> conf_selector;
+
+					switch (conf_selector)
+					{
+					case 'n': break;
+
+					case 'y':
+					{
+						dimension = array_size(pre_alloc);														//dimension() handles the setting of the array size
+						input(t_array, dimension, is_created, pre_alloc);
+
+						break;
+					}
+
+					default: cout << "Wrong input, please try again. " << endl;
+					}
+				}
+			}
+			else
+			{
+				dimension = array_size(pre_alloc);														//dimension() handles the setting of the array size
+				input(t_array, dimension, is_created, pre_alloc);
+			}
 		}
 			break;
 

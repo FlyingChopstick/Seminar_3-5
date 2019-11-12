@@ -5,7 +5,7 @@
 using std::ifstream;
 
 //int input(int* &t_array) 
-int** input(int** t_array, unsigned int dimension, bool* is_created) 
+int** input(int** t_array, unsigned int dimension, bool* is_created, unsigned int pre_alloc) 
 {
 	//unsigned int local_dimension = *dimension;
 	//int n = 0;
@@ -22,29 +22,11 @@ int** input(int** t_array, unsigned int dimension, bool* is_created)
 	cout << endl;
 	cout << "----INPUT----" << endl;
 
-	/*cout << "Enter the size of the array (NxN): ";
-	cin >> *dimension;*/
-
-	//n = sizeArray();
-
-//	t_array = new int* [dimension];
-	/**
-	for (i = 0; i < dimension; i++)
-	{
-		for (j = 0; j < dimension; j++)
-		{
-			t_array[i] = new int[j];
-		}
-	}
-	/**/
-
-
-
 	do
 	{
-		cout << " 1. Read the array from the file"
+		cout << " 1. Enter the array from the keyboard "
 			<< endl
-			<< " 2. Enter the array from the keyboard"
+			<< " 2. Read the array from the file"
 			<< endl
 			<< "Your selection: ";
 		cin >> selector;
@@ -52,7 +34,7 @@ int** input(int** t_array, unsigned int dimension, bool* is_created)
 		switch (selector)
 		{
 		//from the file
-		case '1': 
+		case '2': 
 		{
 			do
 			{
@@ -92,7 +74,7 @@ int** input(int** t_array, unsigned int dimension, bool* is_created)
 		}
 
 		//from the keyboard
-		case '2':
+		case '1':
 		{
 			for (i = 0; i < dimension; i++)
 			{
