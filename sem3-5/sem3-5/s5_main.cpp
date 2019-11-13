@@ -7,5 +7,7 @@ int s5_main()
 	cout << "--PLACEHOLDER_main()--";
 	cout << endl;
 
+	s5_menu();
+
 	return 0;
 }

@@ -133,9 +133,12 @@
     <ClCompile Include="s4_new_input.cpp" />
     <ClCompile Include="s4_new_output.cpp" />
     <ClCompile Include="s4_search.cpp" />
+    <ClCompile Include="s5_input.cpp" />
     <ClCompile Include="s5_main.cpp" />
     <ClCompile Include="s5_menu.cpp" />
     <ClCompile Include="s4_array_size.cpp" />
+    <ClCompile Include="s5_output.cpp" />
+    <ClCompile Include="s5_word_parser.cpp" />
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>

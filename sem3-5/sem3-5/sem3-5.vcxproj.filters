@@ -84,6 +84,15 @@
     <ClCompile Include="s4_array_size.cpp">
       <Filter>Source Files\sem4</Filter>
     </ClCompile>
+    <ClCompile Include="s5_input.cpp">
+      <Filter>Source Files\sem5</Filter>
+    </ClCompile>
+    <ClCompile Include="s5_output.cpp">
+      <Filter>Source Files\sem5</Filter>
+    </ClCompile>
+    <ClCompile Include="s5_word_parser.cpp">
+      <Filter>Source Files\sem5</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="s3_dependances.h">

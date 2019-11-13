@@ -86,7 +86,7 @@ int s4_menu()
 
 
 	//array deletion
-	cout << "Deleting the array"
+	cout << "Deleting the array."
 		<< endl;
 	for (unsigned int i = 0; i < pre_alloc; i++)
 	{

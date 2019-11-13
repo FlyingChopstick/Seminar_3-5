@@ -62,6 +62,7 @@ int s3_menu()
 
 	cout << endl << "Deleting the array." << endl;													//DELETE t_array[]
 	delete[] t_array;	
+	cout << "Array deleted." << endl;
 
 
 

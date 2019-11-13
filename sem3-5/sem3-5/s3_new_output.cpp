@@ -12,7 +12,7 @@ int output(int max_pos, int n_product, const int* t_array, unsigned int* size, b
 		//if true output
 	case true:
 	{
-		unsigned int i;
+		//unsigned int i;
 		char selector = '0';
 
 		cout
