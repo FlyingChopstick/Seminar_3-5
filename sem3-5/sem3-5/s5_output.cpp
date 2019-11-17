@@ -23,7 +23,7 @@ int output(const char *buffer, const unsigned int pre_alloc)
 		{
 		case '1': 
 		{
-			cout << endl << "Words with less then five symbols in them: ";
+			
 			parse(buffer, pre_alloc);
 			cout << endl;
 
@@ -50,6 +50,6 @@ int output(const char *buffer, const unsigned int pre_alloc)
 	} while (selector != '5');
 	
 
-	cout << endl;
+	//cout << endl;
 	return 0;
 }

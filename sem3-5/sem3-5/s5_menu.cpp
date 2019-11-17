@@ -4,7 +4,6 @@
 
 int s5_menu()
 {
-	unsigned int i;
 	char selector = 'a';
 
 	const unsigned int pre_alloc = 64;
