@@ -117,7 +117,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="array_display_1d.cpp" />
     <ClCompile Include="s3_array_size.cpp" />
     <ClCompile Include="s3_output.cpp" />
     <ClCompile Include="s3_sort.cpp" />

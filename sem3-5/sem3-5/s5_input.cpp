@@ -9,7 +9,10 @@ char* input(char* buffer, const unsigned int pre_alloc)
 {
 	unsigned int i = 0;
 
-	char local_buffer[64] = { ' ' };
+	const unsigned int local_pre_alloc = 64;
+	if (pre_alloc > local_pre_alloc) cout << "Warning: main <pre_alloc> is greater then the <local> in input(). This may cause wrong output." << endl;
+
+	char local_buffer[local_pre_alloc] = { ' ' };
 
 	const unsigned int filename_size = 64;
 	char filename[filename_size];
@@ -31,14 +34,14 @@ char* input(char* buffer, const unsigned int pre_alloc)
 
 	cout << "File was successfully opened, reading..." << endl;
 
-	input_file.getline(local_buffer, 63);
+	input_file.getline(local_buffer, local_pre_alloc-1);
 
 	cout << "The file was read successfully.";
 	cout << endl;
 
 	input_file.close();
 
-	for (i = 0; i < 64; i++)
+	for (i = 0; i < local_pre_alloc; i++)
 	{
 		//cout << local_buffer[i];
 		buffer[i] = local_buffer[i];

@@ -63,9 +63,6 @@
     <ClCompile Include="s5_menu.cpp">
       <Filter>Source Files\sem5</Filter>
     </ClCompile>
-    <ClCompile Include="array_display_1d.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
