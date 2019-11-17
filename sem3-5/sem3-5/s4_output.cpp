@@ -3,7 +3,7 @@
 
 #include "s4_dependances.h"
 
-//S4_OUTPUT()
+//OUTPUT() -> 0, handles output of the values and the array
 int output(int** t_array, unsigned int dimension, bool* is_created)
 {
 	//unsigned int local_dimension = *dimension;

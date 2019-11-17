@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "s5_dependances.h"
 
+//OUTPUT() -> 0, handles the output of the values and the text from <buffer>
 int output(const char *buffer, const unsigned int pre_alloc)
 {
 	unsigned int i = 0;

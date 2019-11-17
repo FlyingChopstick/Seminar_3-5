@@ -4,6 +4,7 @@
 
 using std::ifstream;
 
+//INPUT() -> buffer, handles the reading of the file to <buffer>
 char* input(char* buffer, const unsigned int pre_alloc)
 {
 	unsigned int i = 0;

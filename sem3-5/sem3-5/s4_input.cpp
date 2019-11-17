@@ -4,9 +4,11 @@
 
 using std::ifstream;
 
-//int input(int* &t_array) 
-int** input(int** t_array, unsigned int dimension, bool* is_created, unsigned int pre_alloc) 
+//INPUT() -> **t_array, fills the array 
+int** input(int** t_array, unsigned int dimension, unsigned int pre_alloc, bool* is_created) 
 {
+	if (*is_created == true) return t_array;
+
 	//unsigned int local_dimension = *dimension;
 	//int n = 0;
 	unsigned int i, j;

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "s5_dependances.h"
 
+//PARSE() -> 0, finds and outputs words with <5 letters
 int parse(const char* buffer, const unsigned int pre_alloc)
 {
 	unsigned int i = 0;
@@ -8,7 +9,10 @@ int parse(const char* buffer, const unsigned int pre_alloc)
 	unsigned int c;
 	unsigned int length = 0;
 
-	char local_buffer[64] = { ' ' };
+	const unsigned int local_pre_alloc = 64;
+	if (pre_alloc > local_pre_alloc) cout << "Warning: main <pre_alloc> is greater then the <local> in parse(). This may cause wrong output." << endl;
+
+	char local_buffer[local_pre_alloc] = { ' ' };
 
 	for (i = 0; i < pre_alloc; i++)
 	{

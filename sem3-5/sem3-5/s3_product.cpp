@@ -1,13 +1,13 @@
 #include "stdafx.h"
 
-//int PRODUCT() -> int or 0, product of the elements btwn the 1st and the 2nd negeatives
-int product(const int* t_array, unsigned int* size, bool* two_negatives) {
-	int i;																	//iterator
+//PRODUCT() -> int or 0, product of the elements btwn the 1st and the 2nd negeatives
+int product(const int* t_array, unsigned int size, bool* two_negatives) {
+	unsigned int i;																	//iterator
 	int st = -1, fin = -1;															//interval borders
 	int product = 1;																//product
 
 	//determining the borders
-	for (i = 0; i < *size; i++) {
+	for (i = 0; i < size; i++) {
 		if (t_array[i] == 0) {
 			if (st == -1) {
 				st = i;																//left border

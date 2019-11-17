@@ -118,8 +118,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="array_display_1d.cpp" />
-    <ClCompile Include="s3_new_output.cpp" />
-    <ClCompile Include="s3_new_sort.cpp" />
+    <ClCompile Include="s3_array_size.cpp" />
+    <ClCompile Include="s3_output.cpp" />
+    <ClCompile Include="s3_sort.cpp" />
     <ClCompile Include="s4_identical.cpp" />
     <ClCompile Include="main_menu.cpp" />
     <ClCompile Include="s3_input.cpp" />
@@ -130,8 +131,8 @@
     <ClCompile Include="s4_compare.cpp" />
     <ClCompile Include="s4_main.cpp" />
     <ClCompile Include="s4_menu.cpp" />
-    <ClCompile Include="s4_new_input.cpp" />
-    <ClCompile Include="s4_new_output.cpp" />
+    <ClCompile Include="s4_input.cpp" />
+    <ClCompile Include="s4_output.cpp" />
     <ClCompile Include="s4_search.cpp" />
     <ClCompile Include="s5_input.cpp" />
     <ClCompile Include="s5_main.cpp" />

@@ -1,6 +1,8 @@
 #include "stdafx.h"
+#include "s3_dependances.h"
 
-int output(int max_pos, int n_product, const int* t_array, unsigned int* size, bool* is_created, bool* two_negatives)
+//int OUTPUT() -> 0, handles the output of the values and the array
+int output(const int* t_array, unsigned int size, bool* is_created, bool* two_negatives)
 {
 	cout << endl;
 	cout << "----OUTPUT----";
@@ -32,25 +34,30 @@ int output(int max_pos, int n_product, const int* t_array, unsigned int* size, b
 			switch (selector)
 			{
 			//max_pos output
-			case '1': cout << endl 
-				<< "The position of the greatest element is #" << max_pos << " (" << t_array[max_pos] << ")" 
+			case '1': 
+			{
+				unsigned int max_pos = max_position(t_array, size);
+				cout << endl
+					<< "The position of the greatest element is #" << max_pos << " (" << t_array[max_pos] << ")"
 					<< endl;
 				break;
-
+			}
 			//n_product output
 			case '2': 
+			{
+				int n_product = product(t_array, size, two_negatives);
 				switch (*two_negatives)
 				{
-				case true: cout << endl 
-					<< "The product of the elements between the first and the second 0 is " << n_product
-						<< endl;
+				case true: cout << endl
+					<< "The product of the elements between the first and the second 0 is " << n_product << endl;
 					break;
-				case false: cout << "There are no 0 elements or only one 0 element in the array." 
-						<< endl;
+				case false: cout << endl << "There are no 0 elements or only one 0 element in the array."
+					<< endl;
 					break;
 				}
 				break;
-			
+			}
+
 			//array output
 			case'3': 		
 			{
@@ -58,7 +65,7 @@ int output(int max_pos, int n_product, const int* t_array, unsigned int* size, b
 
 				cout << endl
 					<< "Array output: ";
-				for (i = 0; i < *size; i++)
+				for (i = 0; i < size; i++)
 				{
 					cout << t_array[i] << " ";
 				}

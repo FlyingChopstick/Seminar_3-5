@@ -37,8 +37,11 @@ int s4_menu()
 		//input() and dimension() are called
 		case '1': 
 		{
+			/**
 			if (*is_created == true)
 			{
+				dimension = array_size(pre_alloc);
+
 				char conf_selector = 'a';
 				while ((conf_selector != 'n') && (conf_selector != 'y'))
 				{
@@ -51,7 +54,7 @@ int s4_menu()
 
 					case 'y':
 					{
-						dimension = array_size(pre_alloc);														//dimension() handles the setting of the array size
+						dimension = array_size(pre_alloc, dimension, is_created);														//dimension() handles the setting of the array size
 						input(t_array, dimension, is_created, pre_alloc);
 
 						break;
@@ -60,12 +63,18 @@ int s4_menu()
 					default: cout << "Wrong input, please try again. " << endl;
 					}
 				}
+
+
 			}
 			else
 			{
-				dimension = array_size(pre_alloc);														//dimension() handles the setting of the array size
+																		//dimension() handles the setting of the array size
 				input(t_array, dimension, is_created, pre_alloc);
 			}
+			/**/
+			
+			dimension = array_size(pre_alloc, dimension, is_created);
+			input(t_array, dimension, pre_alloc, is_created);
 		}
 			break;
 
