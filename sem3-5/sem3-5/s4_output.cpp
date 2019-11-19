@@ -10,6 +10,8 @@ int output(int** t_array, unsigned int dimension, bool* is_created)
 	unsigned int i, j;
 	char selector = 'n';
 
+	int* results = new int[dimension];
+
 	switch (*is_created)
 	{
 	case false: cout << "Error: Array was not created. You need to create and fill it first."

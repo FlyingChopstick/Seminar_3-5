@@ -1,7 +1,8 @@
 #include "stdafx.h"
 
 //PRODUCT() -> int or 0, product of the elements btwn the 1st and the 2nd negeatives
-int product(const int* t_array, unsigned int size, bool* two_negatives) {
+int product(const int* t_array, unsigned int size) 
+{
 	unsigned int i;																	//iterator
 	int st = -1, fin = -1;															//interval borders
 	int product = 1;																//product
@@ -21,22 +22,47 @@ int product(const int* t_array, unsigned int size, bool* two_negatives) {
 
 
 	//output determination
-		//if there's 1 or less zeroes -> 0
-	if ((st == -1) || (fin == -1)) 
-	{												
-		*two_negatives = false;														//array state change (0 or 1 zero)
 
+	//if there's no zeroes -> 0
+	if ((st == -1) && (fin == -1)) 
+	{												
+		cout << "There are no 0 in the array, unable to calculate." << endl;
+		cout << endl;
 		return 0;																	//-> 0
 	}
-		//if both borders exist
+	//if at least one of the borders exist
 	else 
-	{																			
-		//calculation of the product
-		for (i = st + 1; i < fin; i++) {
-			product *= t_array[i];
+	{				
+		//if only one 0 is found -> 0
+		if (fin == -1)
+		{
+			cout << "There is only one 0 in the array, unable to calculate." << endl;
+			cout << endl;
+			return 0;																//-> 0
 		}
-		*two_negatives = true;														//array state change (found 2 zeroes)
+		//if both 0 are found
+		else
+		{
+			//if this is a "...0 0..." situation -> 0
+			if (fin == st + 1)
+			{
+				cout << "Zeroes are following each other, unable to calculate." << endl;
+				cout << endl;
+				return 0;
+			}
+			//both 0 are valid, calculation of the product
+			else
+			{
+				for (i = st + 1; i < fin; i++) 
+				{
+					product *= t_array[i];
+				}
+				//*product_calculated = true;												//array state change (product is calculated successfully)
+			}
 
-		return product;																//-> product
+			
+			cout << endl << "The product of the elements between the first and the second 0 is " << product << endl;
+			return product;															//-> product
+		}
 	}
 }
