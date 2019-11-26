@@ -12,7 +12,7 @@ int* sort(const int* t_array, unsigned int size)
 	//collecting EVEN positions
 	for (i = 0; i < size; i += 2)
 	{
-		//cout << t_array[i] << " ";
+		//cout << t_array[i] << " ";//DEBUG
 		result[j] = t_array[i];
 		j++;
 	}
@@ -20,7 +20,7 @@ int* sort(const int* t_array, unsigned int size)
 	//collecting ODD positions
 	for (i = 1; i < size; i += 2)
 	{
-		//cout << t_array[i] << " ";
+		//cout << t_array[i] << " ";//DEBUG
 		result[j] = t_array[i];
 		j++;
 	}

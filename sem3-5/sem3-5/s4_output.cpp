@@ -3,76 +3,74 @@
 
 #include "s4_dependances.h"
 
-//OUTPUT() -> 0, handles output of the values and the array
-int output(int** t_array, unsigned int dimension, bool* is_created)
+//OUTPUT(), handles output of the values and the array
+void output(int** t_array, unsigned int dimension)
 {
-	//unsigned int local_dimension = *dimension;
 	unsigned int i, j;
 	char selector = 'n';
 
-	int* results = new int[dimension];
+	int* arr_identical = new int[dimension];
+	int** arr_search = new int*[dimension];
+	for (i=0;i<dimension;i++)
+		arr_search[i] = new int[2];
 
-	switch (*is_created)
+
+	cout << endl;
+	cout << "----OUTPUT MENU----"; 
+	cout << endl;
+
+	do
 	{
-	case false: cout << "Error: Array was not created. You need to create and fill it first."
-		<< endl;
-		break;
+		cout << " 1. Search for identical rows and columns" << endl;
+		cout << " 2. Sum the rows with the negative elements" << endl;
+		cout << " 3. Display the array" << endl;
+		cout << " 5. Return" << endl;
+		cout << "Your selection: ";
+		cin >> selector;
 
-	case true:
-	{
-		cout << endl 
-			<< "----OUTPUT MENU----"<< endl;
-
-		do
+		switch (selector)
 		{
-			cout << " 1. Search for identical rows and columns" << endl
-				<< " 2. Sum the rows with the negative elements" << endl
-				<< " 3. Display the array" << endl
-				<< " 5. Return" << endl;
-			cout << "Your selection: ";
-			cin >> selector;
+		case '1': 
+		{
+			arr_identical = identical(t_array, dimension);
+			display_identical(arr_identical, dimension);
+			cout << endl;
+			break;
+		}
 
-			switch (selector)
-			{
-			case '1': identical(t_array, dimension);
-				cout << endl; 
-				break;
+		case '2': 
+		{
+			arr_search = search(t_array, dimension);
+			display_search(arr_search, dimension);
+			cout << endl;
+			break;
+		}
 
-			case '2': search(t_array, dimension);
-				cout << endl;
-				break;
+		case '3':
+		{
+			display_array(t_array, dimension);
+			cout << endl;
+			break;
+		}
 
-			case '3':
-			{
-				for (i = 0; i < dimension; i++)
-				{
-					for (j = 0; j < dimension; j++)
-					{
-						cout << t_array[i][j] << "	";
-					}
-					cout << endl;
-				}
-				cout << endl;
-				break;
-			}
+		case '5':
+		{
+			break;
+		}
 
-			case '5':
-			{
-				cout << "----OUTPUT END----"
-					<< endl;
-				cout << endl;
+		default: cout << "Wrong input, please try again." << endl;
+			break;
+		}
 
-				return 0;
-			}
+	} while (selector != '5');
 
-			default: cout << "Wrong input, please try again." << endl;
-				break;
-			}
+	delete[] arr_identical;
+	for (i = 0; i < dimension; i++)
+		delete[] arr_search[i];
+	delete[] arr_search;
 
-		} while (selector != '5');
-	}
 
-	}
-
-	return 0;
+	cout << endl;
+	cout << "----OUTPUT END----";
+	cout << endl;
 }

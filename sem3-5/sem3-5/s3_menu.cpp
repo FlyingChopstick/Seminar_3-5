@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "s3_dependances.h"
 
-int s3_menu()
+void s3_menu()
 {
 	char selector = 'a';															//main menu selector
 	
@@ -14,7 +14,6 @@ int s3_menu()
 	//states
 	bool is_created = false;											//whether the array is created or not
 	bool is_sorted = false;												//state of the array (sorted/not sorted)
-	//bool* two_negatives = new bool(false);								//whether there are two negatives in the array
 
 
 
@@ -25,10 +24,11 @@ int s3_menu()
 		cout << "----SEMINAR 3 MENU----" << endl;
 		cout << " 1. Array input" << endl;
 		cout << " 2. Sort the array" << endl;
-		cout << " 3. Print the values" << endl;
+		cout << " 3. Display the tasks" << endl;
 		cout << " 5. Exit" << endl;
 		cout << "Your selection: ";
 		cin >> selector;
+
 
 		switch (selector)
 		{
@@ -54,6 +54,7 @@ int s3_menu()
 							size = array_size(max_size); 
 							input(t_array, size);																	//INPUT() is called -> t_array
 							is_created = true;																		//array state change (creation)
+							is_sorted = false;
 							
 							break;
 						}
@@ -149,15 +150,10 @@ int s3_menu()
 
 	} while (selector != '5');
 
-	cout << endl << "Deleting the main array." << endl;
+	
+	//cout << endl << "Deleting the main array." << endl;//DEBUG
 	delete[] t_array;																					//DELETE t_array[]
-	cout << endl << "Deleting the sorted array." << endl;
+	//cout << "Deleting the sorted array." << endl;//DEBUG
 	delete[] sorted_array;																				//DELETE sorted_array[]
-	cout << "Arrays deleted." << endl;
-
-	//delete is_created;
-	//delete two_negatives;
-
-
-	return 0;
+	//cout << "Arrays deleted." << endl;//DEBUG
 }

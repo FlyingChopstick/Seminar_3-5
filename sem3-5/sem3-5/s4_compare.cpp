@@ -1,7 +1,8 @@
 #include "stdafx.h"
 
 //COMPARE() -> bool t/f, compares the <start_index> column and row, ->true if identical
-bool compare(int** t_array, unsigned int dimension, int start_index) {
+bool compare(int** t_array, unsigned int dimension, int start_index) 
+{
 	unsigned int c = 0;
 
 

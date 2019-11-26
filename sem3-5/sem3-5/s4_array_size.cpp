@@ -1,51 +1,26 @@
 #include "stdafx.h"
+#include "s4_dependances.h"
 
-//ARRAY_SIZE() -> unsigned int dimension, handles the array size setting and <is_created> check
-unsigned int array_size(unsigned int pre_alloc, unsigned int dimension, bool* is_created)
+//ARRAY_DIMENSION() -> int user_dimension, handles the array size setting and <is_created> check
+int array_dimension(unsigned int max_dimension)
 {
-	//overwrite check
-	if (*is_created == true)
-	{
-		char selector = 'a';
+	int user_dimension = 0;
 
-		//overwrite confirmation
-		cout << "The array is already created. If you proceed it will be overwritten. Continue? (y/n)" << endl;
-		while (selector != 'y')
-		{
-			cout << "Your selection: ";
-			cin >> selector;
-			switch (selector)
-			{
-				//if 'y' set <size> to 0 and re-enter it
-			case 'y':
-			{
-				*is_created = false;
-				break;
-			}
-
-			//if 'n' do not change <size>
-			case 'n': return dimension;
-
-			default: cout << "Wrong input, try again." << endl;
-			}
-		}
-	}
-
-	dimension = 0;
-	cout << "Enter the size of the array (NxN, max 10): ";
-	cin >> dimension;
+	cout << endl;
+	cout << "Enter the size of the array (NxN, max " << max_dimension << "): ";
+	cin >> user_dimension;
 
 	while (true)
 	{
 		//input check
-		if ((dimension <= 0) || (dimension > pre_alloc))
+		if ((user_dimension <= 0) || (user_dimension > max_dimension))
 		{
-			cout << "Error: Wrong size of the array. It must be between 1 and " << pre_alloc << ", please try again: ";
-			cin >> dimension;
+			cout << "Error: Wrong size of the array. It must be between 1 and " << max_dimension << ", please try again: ";
+			cin >> user_dimension;
 		}
 		else
 			break;
 	}
 
-	return dimension;
+	return user_dimension;
 }

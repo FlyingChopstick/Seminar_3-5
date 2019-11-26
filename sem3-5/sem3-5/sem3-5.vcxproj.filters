@@ -75,9 +75,6 @@
     <ClCompile Include="s5_output.cpp">
       <Filter>Source Files\sem5</Filter>
     </ClCompile>
-    <ClCompile Include="s5_word_parser.cpp">
-      <Filter>Source Files\sem5</Filter>
-    </ClCompile>
     <ClCompile Include="s3_array_size.cpp">
       <Filter>Source Files\sem3</Filter>
     </ClCompile>
@@ -92,6 +89,30 @@
     </ClCompile>
     <ClCompile Include="s4_output.cpp">
       <Filter>Source Files\sem4</Filter>
+    </ClCompile>
+    <ClCompile Include="s4_display_identical.cpp">
+      <Filter>Source Files\sem4</Filter>
+    </ClCompile>
+    <ClCompile Include="s4_display_search.cpp">
+      <Filter>Source Files\sem4</Filter>
+    </ClCompile>
+    <ClCompile Include="s4_display_array.cpp">
+      <Filter>Source Files\sem4</Filter>
+    </ClCompile>
+    <ClCompile Include="s3_display_array.cpp">
+      <Filter>Source Files\sem3</Filter>
+    </ClCompile>
+    <ClCompile Include="s5_display_text.cpp">
+      <Filter>Source Files\sem5</Filter>
+    </ClCompile>
+    <ClCompile Include="s3_display_product.cpp">
+      <Filter>Source Files\sem3</Filter>
+    </ClCompile>
+    <ClCompile Include="s5_parse.cpp">
+      <Filter>Source Files\sem5</Filter>
+    </ClCompile>
+    <ClCompile Include="s5_display_words.cpp">
+      <Filter>Source Files\sem5</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

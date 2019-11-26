@@ -2,20 +2,28 @@
 
 int s4_main();
 //main menu of s4
-int s4_menu();
+void s4_menu();
 
-//INPUT() -> **t_array, fills the array 
-//int** input(int** t_array, unsigned int dimension, bool* is_created, unsigned int pre_alloc);
-int** input(int** t_array, unsigned int dimension, unsigned int pre_alloc, bool* is_created);
-//ARRAY_SIZE() -> unsigned int dimension, handles the array size setting and <is_created> check
-unsigned int array_size(unsigned int pre_alloc, unsigned int dimension, bool* is_created);
 
-//OUTPUT() -> 0, handles output of the values and the array
-int output(int** t_array, unsigned int dimension, bool* is_created);
+//INPUT(), fills the array 
+void input(int** t_array, unsigned int dimension);
+//ARRAY_DIMENSION() -> int user_dimension, handles the array size setting
+int array_dimension(unsigned int max_dimension);
+//OUTPUT(), handles output of the values and the array
+void output(int** t_array, unsigned int dimension);
 
-//IDENTICAL() -> int result, cout<< of the identical rows and columns
-int identical(int** t_array, unsigned int dimension);
+
+//IDENTICAL() -> int* numbers, finds and returns the array of numbers of identical r&c
+int* identical(int** t_array, unsigned int dimension);
 //COMPARE() -> bool t/f, compares the <start_index> column and row, ->true if identical
 bool compare(int** t_array, unsigned int dimension, int start_index);
-//SEARCH() ->int tmp, checks whether the row has <0 elements, sums if true
-int search(int** t_array, unsigned int dimension);
+//SEARCH() ->int** sums, checks whether the row has <0 elements, sums and puts in the array if true
+int** search(int** t_array, const unsigned int dimension);
+
+
+//DISPLAY_ARRAY(), prints the array
+void display_array(int** target, unsigned int dimension);
+//DISPLAY_IDENTICAL(), prints the numbers of the identical r&c if found
+void display_identical(int* target, unsigned int dimension);
+//DISPLAY_SEARCH(), prints the sums of the rows with negative elements
+void display_search(int** target, unsigned int dimension);

@@ -4,11 +4,9 @@
 
 using std::ifstream;
 
-//INPUT() -> **t_array, fills the array 
-int** input(int** t_array, unsigned int dimension, unsigned int pre_alloc, bool* is_created) 
+//INPUT(), fills the array 
+void input(int** t_array, unsigned int dimension) 
 {
-	if (*is_created == true) return t_array;
-
 	//unsigned int local_dimension = *dimension;
 	//int n = 0;
 	unsigned int i, j;
@@ -22,21 +20,39 @@ int** input(int** t_array, unsigned int dimension, unsigned int pre_alloc, bool*
 
 
 	cout << endl;
-	cout << "----INPUT----" << endl;
+	cout << "----INPUT----";
+	cout << endl;
 
-	do
+	while ((selector != '1') && (selector != '2') && (selector != '5'))
 	{
-		cout << " 1. Enter the array from the keyboard "
-			<< endl
-			<< " 2. Read the array from the file"
-			<< endl
-			<< "Your selection: ";
+		cout << " 1. Enter the array from the keyboard ";
+		cout << endl;
+		cout << " 2. Read the array from the file";
+		cout << endl;
+		cout << " 5. Cancel";
+		cout << endl;
+		cout << "Your selection: ";
 		cin >> selector;
 
 		switch (selector)
 		{
 		//from the file
-		case '2': 
+		case '1':
+		{
+			for (i = 0; i < dimension; i++)
+			{
+				for (j = 0; j < dimension; j++)
+				{
+					cout << "Enter the element [" << i << "][" << j << "]: ";
+					cin >> t_array[i][j];
+				}
+			}
+			cout << "Array created.";
+			break;
+		}
+
+		//from the keyboard
+		case '2':
 		{
 			do
 			{
@@ -45,8 +61,7 @@ int** input(int** t_array, unsigned int dimension, unsigned int pre_alloc, bool*
 
 				cout << "Opening the file..." << endl;
 				input_file.open(filename);
-				if (!input_file) cout << "Error: Could not open the file specified."
-					<< endl;
+				if (!input_file) cout << "Error: Could not open the file specified." << endl;
 
 			} while (!input_file);
 
@@ -59,36 +74,11 @@ int** input(int** t_array, unsigned int dimension, unsigned int pre_alloc, bool*
 					input_file >> t_array[i][j];
 					if (!input_file)
 					{
-						cout << "Error: could not read the element, returning to the menu."
-							<< endl;
-						return 0;
+						cout << "Error: could not read the element, please try again." << endl;
 					}
 				}
 			}
-
-			cout << "The file was read successfully.";
-			cout << endl;
-			*is_created = true;
-
 			input_file.close();
-
-			break;
-		}
-
-		//from the keyboard
-		case '1':
-		{
-			for (i = 0; i < dimension; i++)
-			{
-				for (j = 0; j < dimension; j++)
-				{
-					cout << "Enter the element [" << i << "][" << j << "]: ";
-					cin >> t_array[i][j];
-					cout << endl;
-				}
-			}
-
-			*is_created = true;
 
 			break;
 		}
@@ -96,18 +86,13 @@ int** input(int** t_array, unsigned int dimension, unsigned int pre_alloc, bool*
 		//return
 		case '5': break;
 
-		default: cout << "Wrong input, please try again"
-					<< endl;
+		default: cout << "Wrong input, please try again" << endl;
 			break;
 		}
-
-	} while (*is_created != true);
+	}
 	
 
 	cout << endl;
 	cout << "----INPUT END----";
 	cout << endl;
-
-
-	return t_array;
 }

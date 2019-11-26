@@ -2,36 +2,44 @@
 #include "s5_dependances.h"
 
 
-int s5_menu()
+void s5_menu()
 {
 	char selector = 'a';
 
-	const unsigned int pre_alloc = 64;
-	char* buffer = new char[pre_alloc];
+	const unsigned int max_dimension = 64;
+	char* buffer = new char[max_dimension];
 	
 	*buffer = { ' ' };
 
+	cout << endl;
+	cout << "----SEMINAR 5 MENU----";
+	cout << endl;
 
-	cout << "----SEMINAR 5 MENU----" << endl;
 
 
 	do
 	{
-		cout << endl;
 		cout << " 1. Enter the text." << endl;
-		cout << " 2. Output the text." << endl;
+		cout << " 2. Display the tasks." << endl;
 		cout << " 5. Exit." << endl;
 		cout << "Your selection: ";
 		cin >> selector;
 
+
 		switch (selector)
 		{
-		case '1': input(buffer, pre_alloc);
+		case '1': 
+		{
+			input(buffer, max_dimension);
+			cout << endl;
 			break;
-
-		case '2': output(buffer, pre_alloc);
+		}
+		case '2':
+		{
+			output(buffer, max_dimension);
+			cout << endl;
 			break;
-
+		}
 		case '5':
 			break;
 
@@ -41,9 +49,7 @@ int s5_menu()
 	} while (selector != '5');
 
 
-	cout << "Deleting the array." << endl;
+	//cout << "Deleting the array." << endl;//DEBUG
 	delete[] buffer;
-	cout << "Array deleted." << endl;
-
-	return 0;
+	//cout << "Array deleted." << endl;//DEBUG
 }

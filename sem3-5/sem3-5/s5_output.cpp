@@ -2,19 +2,30 @@
 #include "s5_dependances.h"
 
 //OUTPUT() -> 0, handles the output of the values and the text from <buffer>
-int output(const char *buffer, const unsigned int pre_alloc)
+void output(const char *buffer, const unsigned int max_dimension)
 {
-	unsigned int i = 0;
-
 	char selector = 'a';
+	unsigned int i;
+	unsigned int words_size = max_dimension / 4;
 
-	cout << endl
-		<< "----OUTPUT MENU----" << endl;
+
+	char** words = new char* [words_size];
+	for (i = 1; i < words_size; i++)
+	{
+		words[i] = new char[4];
+
+	}
+
+	cout << endl;
+	cout << "----OUTPUT MENU----";
+	cout << endl;
+
+
 
 	do
 	{
 		cout << " 1. Find words with less then five symbols" << endl;
-		cout << " 2. Display the text" << endl;
+		cout << " 2. Print the text" << endl;
 		cout << " 5. Return" << endl;
 		cout << "Your selection: ";
 		cin >> selector;
@@ -23,22 +34,15 @@ int output(const char *buffer, const unsigned int pre_alloc)
 		{
 		case '1': 
 		{
-			
-			parse(buffer, pre_alloc);
-			cout << endl;
-
+			words = parse(buffer, max_dimension);
+			//cout << endl;
+			display_words(words, max_dimension);
 			break;
 		}
 
 		case '2': 
 		{
-			cout << "You entered the following text: " << endl;
-			for (i = 0; i < pre_alloc; i++)
-			{
-				cout << buffer[i];
-			}
-			cout << endl;
-
+			display_text(buffer, max_dimension);
 			break;
 		}
 
@@ -50,6 +54,7 @@ int output(const char *buffer, const unsigned int pre_alloc)
 	} while (selector != '5');
 	
 
-	//cout << endl;
-	return 0;
+	cout << endl;
+	cout << "----OUTPUT END----";
+	cout << endl;
 }

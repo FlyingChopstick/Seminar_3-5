@@ -1,16 +1,19 @@
 #include "s4_dependances.h"
 #include "stdafx.h"
 
-//IDENTICAL() -> int result, cout<< of the identical rows and columns
-int identical(int** t_array, unsigned int dimension)
+//IDENTICAL() -> int* numbers, finds and returns the array of numbers of identical r&c
+int* identical(int** t_array, unsigned int dimension)
 {
 	unsigned int i;
 	int result = 0;
 	bool is_found = false;
+	int* numbers = new int[dimension];
+
 
 	//i[0-k] loop, checks the first numbers in columns/rows
 	for (i = 0; i < dimension; i++) 
 	{
+		numbers[i] = -1;
 		if (t_array[0][i] == t_array[i][0]) 
 		{
 			//COMPARE() is called, output is stored in <result>
@@ -20,23 +23,15 @@ int identical(int** t_array, unsigned int dimension)
 				is_found = true;
 			}
 
-			//cout << "The result is \"" << result << "\"";										//DEBUG raw <result>
+			//cout << "The result is \"" << result << "\"";//DEBUG
 
-			//output determination
 			if (is_found == true)
 			{
-				cout << "The row #" << result << " is identical to the column #" << result
-					<< endl;
+				numbers[i] = result;
 			}
 
 		}
 	}
 
-	if (is_found == false)
-	{
-		cout << "There are no identical rows and columns in the array."
-			<< endl;
-	}
-
-	return 0;
+	return numbers;
 }
