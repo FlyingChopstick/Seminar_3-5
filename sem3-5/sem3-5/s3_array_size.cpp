@@ -4,15 +4,19 @@
 int array_size(const unsigned int max_size)
 {
 	int user_size = 0;
-	while (user_size <= 0)
+
+
+	while (true)
 	{
 		cout << endl;
 		cout << "Enter the size of the array (max. " << max_size << "): ";
 		cin >> user_size;
 
-		//check if the input is valid (>0)
+		//input check
 		if ((user_size <= 0) || (user_size > max_size))
-			cout << "Error: Array size must be >0 and <" << max_size << ". Please try again." << endl;
+			cout << "Error: Array size must be >0 and <=" << max_size << ". Please try again." << endl;
+		else
+			break;
 	}
 	
 
