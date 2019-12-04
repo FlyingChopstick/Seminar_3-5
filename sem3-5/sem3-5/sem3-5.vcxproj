@@ -149,6 +149,7 @@
     <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="classes.h" />
     <ClInclude Include="s3_dependances.h" />
     <ClInclude Include="s4_dependances.h" />
     <ClInclude Include="s5_dependances.h" />
